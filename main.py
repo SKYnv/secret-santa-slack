@@ -18,4 +18,4 @@ app.add_routes([web.get('/', handle),
                 web.get('/{url}', unknown),])
 
 if __name__ == '__main__':
-    web.run_app(app)
+    web.run_app(app, port=80)
