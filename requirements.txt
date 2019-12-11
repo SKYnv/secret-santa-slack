@@ -1,0 +1,4 @@
+aiohttp[speedups]
+peewee-async
+aiopg
+peewee
