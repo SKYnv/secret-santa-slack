@@ -10,6 +10,9 @@ async def unknown(request):
 
 async def incomming_message(request):
     response = await request.json()
+    challenge = response.get('challenge')
+    if challenge:
+        return web.json_response(data={"challenge": challenge})
     return web.json_response(data=response)
 
 santa_app = web.Application()
