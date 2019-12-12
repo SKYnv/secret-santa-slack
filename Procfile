@@ -1,0 +1,1 @@
+web: gunicorn app:santa_app --worker-class aiohttp.GunicornWebWorker

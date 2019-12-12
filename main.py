@@ -12,10 +12,10 @@ async def incomming_message(request):
     response = await request.json()
     return web.json_response(data=response)
 
-app = web.Application()
-app.add_routes([web.get('/', handle),
+santa_app = web.Application()
+santa_app.add_routes([web.get('/', handle),
                 web.get('/msg', incomming_message),
                 web.get('/{url}', unknown),])
 
 if __name__ == '__main__':
-    web.run_app(app, port=80)
+    web.run_app(santa_app, port=80)
