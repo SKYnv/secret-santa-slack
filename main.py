@@ -18,16 +18,17 @@ async def incomming_message(request):
     except Exception:
         return web.Response(text=request.headers)
 
-    if request.method == 'POST':
-        if 'challenge' in response:
-            return web.json_response(data={"challenge": response.get('challenge')})
+    # if request.method == 'POST':
+    if 'challenge' in response:
+        return web.json_response(data={"challenge": response.get('challenge')})
 
-        if response["event"]["type"] == "message":
-            await reply_to_message(response["event"])
+    print(response.get('event'))
+    if response["event"]["type"] == "message":
+        await reply_to_message(response["event"])
 
-        return web.Response()
+    return web.Response()
 
-    return web.json_response(data=response)
+    # return web.json_response(data=response)
 
 async def reply_to_message(event):
     text = (f"Ой <@{event['user']}>, я еще такой глупый! ")
