@@ -3,3 +3,4 @@ peewee-async
 aiopg
 peewee
 gunicorn
+aioslacker
